@@ -1,23 +1,23 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useId } from 'react'
+import { useId } from "react";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/app/_lib/utils";
 
 interface GridPatternProps {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  width?: any
+  width?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  height?: any
+  height?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  x?: any
+  x?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  y?: any
-  squares?: Array<[x: number, y: number]>
+  y?: any;
+  squares?: Array<[x: number, y: number]>;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  strokeDasharray?: any
-  className?: string
+  strokeDasharray?: any;
+  className?: string;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  [key: string]: any
+  [key: string]: any;
 }
 
 export function GridPattern({
@@ -30,13 +30,13 @@ export function GridPattern({
   className,
   ...props
 }: GridPatternProps) {
-  const id = useId()
+  const id = useId();
 
   return (
     <svg
       aria-hidden="true"
       className={cn(
-        'pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30',
+        "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
         className
       )}
       {...props}
@@ -74,7 +74,7 @@ export function GridPattern({
         </svg>
       )}
     </svg>
-  )
+  );
 }
 
-export default GridPattern
+export default GridPattern;
