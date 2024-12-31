@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/app/_lib/utils";
 
 interface TypingAnimationProps {
-  text: string
-  duration?: number
-  className?: string
+  text: string;
+  duration?: number;
+  className?: string;
 }
 
 export default function TypingAnimation({
@@ -15,34 +15,34 @@ export default function TypingAnimation({
   duration = 200,
   className,
 }: TypingAnimationProps) {
-  const [displayedText, setDisplayedText] = useState<string>('')
-  const [i, setI] = useState<number>(0)
+  const [displayedText, setDisplayedText] = useState<string>("");
+  const [i, setI] = useState<number>(0);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const typingEffect = setInterval(() => {
       if (i < text.length) {
-        setDisplayedText(text.substring(0, i + 1))
-        setI(i + 1)
+        setDisplayedText(text.substring(0, i + 1));
+        setI(i + 1);
       } else {
-        clearInterval(typingEffect)
+        clearInterval(typingEffect);
       }
-    }, duration)
+    }, duration);
 
     return () => {
-      clearInterval(typingEffect)
-    }
+      clearInterval(typingEffect);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [duration, i])
+  }, [duration, i]);
 
   return (
     <h1
       className={cn(
-        'font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm',
+        "font-display text-center text-4xl font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
         className
       )}
     >
       {displayedText ? displayedText : text}
     </h1>
-  )
+  );
 }
