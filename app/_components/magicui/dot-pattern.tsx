@@ -1,26 +1,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useId } from 'react'
+import { useId } from "react";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/app/_lib/utils";
 
 interface DotPatternProps {
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  width?: any
+  width?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  height?: any
+  height?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  x?: any
+  x?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  y?: any
+  y?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  cx?: any
+  cx?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  cy?: any
+  cy?: any;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  cr?: any
-  className?: string
+  cr?: any;
+  className?: string;
   // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  [key: string]: any
+  [key: string]: any;
 }
 export function DotPattern({
   width = 16,
@@ -33,13 +33,13 @@ export function DotPattern({
   className,
   ...props
 }: DotPatternProps) {
-  const id = useId()
+  const id = useId();
 
   return (
     <svg
       aria-hidden="true"
       className={cn(
-        'pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80',
+        "pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80",
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ export function DotPattern({
       </defs>
       <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
     </svg>
-  )
+  );
 }
 
-export default DotPattern
+export default DotPattern;
